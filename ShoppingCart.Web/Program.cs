@@ -1,7 +1,11 @@
+using ShoppingCart.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<ShoppingCartDbContext>();
 
 var app = builder.Build();
 

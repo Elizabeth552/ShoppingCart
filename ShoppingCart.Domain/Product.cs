@@ -2,13 +2,15 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public class Product : EntityBase
     {
-        public Product( string name, string description, string categoty, decimal price, string photo)
+        public Product()
+        {
+
+        }
+
+        public Product(string name, string description, string categoty, decimal price, string photo)
         {
             Name = name;
             Description = description;
@@ -25,7 +27,7 @@
         public decimal Price { get; }
         public DateTime CreatedAt { get; }
         public string Photo { get; }
-        public List<Comment> Comments { get; }
+        public List<Comment>? Comments { get; } = new List<Comment>();
 
     }
 }
