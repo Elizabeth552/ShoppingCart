@@ -2,7 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain;
+    using ShoppingCart.Domain.BoundedContext.Comments;
 
     internal class CommentEntityConfiguration : IEntityTypeConfiguration<Comment>
     {
