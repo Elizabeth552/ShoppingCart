@@ -1,11 +1,34 @@
+using AutoMapper;
 using ShoppingCart.Infrastructure;
+using ShoppingCartServices.Mapping;
+using ShoppingCartServices.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 builder.Services.AddDbContext<ShoppingCartDbContext>();
+
+builder.Services.AddScoped<IUsersServices, UsersServices>();
+
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+builder.Services.AddSingleton(ConfigureMapperService());
+
+builder.Services.AddSingleton(ConfigureMapperService());
+
+static IMapper ConfigureMapperService()
+{
+    var mapperServiceConfigureation = new MapperConfiguration(cfg =>
+    {
+        cfg.AddProfile<AutoMapperProfile>();
+    });
+
+    mapperServiceConfigureation.AssertConfigurationIsValid();
+
+    return mapperServiceConfigureation.CreateMapper();
+}
 
 var app = builder.Build();
 
