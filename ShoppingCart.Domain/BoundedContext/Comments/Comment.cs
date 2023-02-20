@@ -1,4 +1,7 @@
-﻿namespace ShoppingCart.Domain
+﻿using ShoppingCart.Domain.BoundedContext.Products;
+using ShoppingCart.Domain.Common;
+
+namespace ShoppingCart.Domain.BoundedContext.Comments
 {
     public class Comment : EntityBase
     {

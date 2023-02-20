@@ -1,16 +1,10 @@
-﻿namespace ShoppingCart.Domain
+﻿namespace ShoppingCart.Domain.BoundedContext.Products
 {
-    using System;
-    using System.Collections.Generic;
+    using ShoppingCart.Domain.BoundedContext.Comments;
 
-    public class Product : EntityBase
+    public class ProductDto
     {
-        public Product()
-        {
-
-        }
-
-        public Product(string name, string description, string categoty, decimal price, string photo)
+        public ProductDto(long id, string name, string description, string categoty, decimal price, string photo)
         {
             Name = name;
             Description = description;
@@ -21,6 +15,7 @@
             Comments = new List<Comment>();
         }
 
+        public long Id { get; }
         public string Name { get; }
         public string Description { get; }
         public string Category { get; }

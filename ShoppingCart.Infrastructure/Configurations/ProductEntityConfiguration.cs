@@ -2,7 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain;
+    using ShoppingCart.Domain.BoundedContext.Products;
 
     internal class ProductEntityConfiguration : IEntityTypeConfiguration<Product>
     {
@@ -23,7 +23,8 @@
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData(
-                new { Id = 1L, Name = "Purse", Description = "pretty purse", Category = "purses", Price = 111.99m, CreatedAt = DateTime.Now, Photo = "photo.jpeg" }, new { Id = 2L, Name = "Scarf", Description = "blah", Category = "scarfs", Price = 300.99m, CreatedAt = DateTime.Now, Photo = "scarf.jpeg" });
+                new { Id = 1L, Name = "Purse", Description = "pretty purse", Category = "purses", Price = 111.99m, CreatedAt = DateTime.Now, Photo = "photo.jpeg", UserId = 1L },
+                new { Id = 2L, Name = "Scarf", Description = "blah", Category = "scarfs", Price = 300.99m, CreatedAt = DateTime.Now, Photo = "scarf.jpeg", UserId = 1L });
         }
     }
 }
