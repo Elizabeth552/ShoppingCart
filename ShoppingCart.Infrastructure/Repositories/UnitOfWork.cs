@@ -1,12 +1,14 @@
 ﻿namespace ShoppingCart.Infrastructure.Repositories
 {
     using System;
+    using ShoppingCart.Domain.BoundedContext.Products;
     using ShoppingCart.Domain.BoundedContext.Users;
 
     public class UnitOfWork : IDisposable
     {
         private ShoppingCartDbContext context = new ShoppingCartDbContext();
         private RepositoryBase<User> userRepository;
+        private RepositoryBase<Product> productRepository;
 
         public RepositoryBase<User> UserRepository
         {
@@ -21,6 +23,18 @@
             }
         }
 
+        public RepositoryBase<Product> ProductRepository
+        {
+            get
+            {
+
+                if (this.productRepository == null)
+                {
+                    this.productRepository = new RepositoryBase<Product>(context);
+                }
+                return productRepository;
+            }
+        }
 
         public void Save()
         {

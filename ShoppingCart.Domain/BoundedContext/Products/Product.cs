@@ -8,11 +8,6 @@
 
     public class Product : EntityBase
     {
-        public Product()
-        {
-
-        }
-
         public Product(string name, string description, string categoty, decimal price, string photo)
         {
             Name = name;

@@ -16,9 +16,21 @@
             _mapper = mapper;
         }
 
-        public UserDto CreateUser()
+        public void CreateUser(UserDto userDto)
         {
-            throw new NotImplementedException();
+           var user = _mapper.Map<User>(userDto);
+            unitOfWork.UserRepository.Insert(user);
+        }
+
+        public void DeleteUser(long id)
+        {
+            unitOfWork.UserRepository.Delete(id);
+        }
+
+        public void UpdateUser(UserDto userDto)
+        {
+            var user = _mapper.Map<User>(userDto);
+            unitOfWork.UserRepository.Update(user);
         }
 
         public User GetUserById(long id)
