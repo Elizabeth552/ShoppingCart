@@ -1,4 +1,4 @@
-﻿namespace ShoppingCartServices.Products
+﻿namespace ShoppingCart.Web.Dtos
 {
     using System;
     using System.Collections.Generic;

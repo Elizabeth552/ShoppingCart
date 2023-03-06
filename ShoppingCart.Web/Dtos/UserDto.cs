@@ -1,6 +1,5 @@
-﻿namespace ShoppingCartServices.Users
+﻿namespace ShoppingCart.Web.Dtos
 {
-    using ShoppingCartServices.Products;
 
     public class UserDto
     {

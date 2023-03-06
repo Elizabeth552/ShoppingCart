@@ -1,7 +1,7 @@
 ﻿namespace ShoppingCartServices.Users
 {
     using AutoMapper;
-    using ShoppingCart.Domain.BoundedContext.Users;
+    using ShoppingCart.Domain.Users;
     using ShoppingCart.Infrastructure.Repositories;
 
     public class UsersServices : IUsersServices
@@ -33,13 +33,12 @@
             unitOfWork.UserRepository.Update(user);
         }
 
-        public User GetUserById(long id)
+        public UserDto GetUserById(long id)
         {
             var user = unitOfWork.UserRepository.GetByID(id);
 
-            // Map user to UserDto
             var userDto = _mapper.Map<UserDto>(user);
-            return user;
+            return userDto;
         }
     }
 }

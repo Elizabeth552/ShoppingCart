@@ -2,7 +2,7 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain.BoundedContext.Products;
+    using ShoppingCart.Domain.Products;
 
     internal class ProductEntityConfiguration : IEntityTypeConfiguration<Product>
     {

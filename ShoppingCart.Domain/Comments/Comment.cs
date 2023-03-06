@@ -1,7 +1,7 @@
-﻿using ShoppingCart.Domain.BoundedContext.Products;
-using ShoppingCart.Domain.Common;
+﻿using ShoppingCart.Domain.Common;
+using ShoppingCart.Domain.Products;
 
-namespace ShoppingCart.Domain.BoundedContext.Comments
+namespace ShoppingCart.Domain.Comments
 {
     public class Comment : EntityBase
     {
@@ -14,7 +14,7 @@ namespace ShoppingCart.Domain.BoundedContext.Comments
 
         public Product Product { get; set; }
 
-        public long ProductId { get; set; }
+        public int ProductId { get; set; }
 
         public string Content { get; }
     }

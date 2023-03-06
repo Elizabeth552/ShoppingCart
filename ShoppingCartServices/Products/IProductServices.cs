@@ -8,5 +8,6 @@
 
     public class IProductServices
     {
+        //GetList list ot produktite
     }
 }

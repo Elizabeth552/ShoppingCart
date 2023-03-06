@@ -1,15 +1,12 @@
 using AutoMapper;
 using ShoppingCart.Infrastructure;
 using ShoppingCartServices.Mapping;
-using ShoppingCartServices.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShoppingCartDbContext>();
-
-builder.Services.AddScoped<IUsersServices, UsersServices>();
 
 
 builder.Services.AddAutoMapper(typeof(Program));

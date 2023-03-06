@@ -1,10 +1,10 @@
-﻿namespace ShoppingCart.Domain.BoundedContext.Products
+﻿namespace ShoppingCart.Domain.Products
 {
     using System;
     using System.Collections.Generic;
-    using ShoppingCart.Domain.BoundedContext.Comments;
-    using ShoppingCart.Domain.BoundedContext.Users;
+    using ShoppingCart.Domain.Comments;
     using ShoppingCart.Domain.Common;
+    using ShoppingCart.Domain.Users;
 
     public class Product : EntityBase
     {
@@ -29,7 +29,7 @@
 
         public User User { get; set; }
 
-        public long UserId { get; set; }
+        public int UserId { get; set; }
 
     }
 }

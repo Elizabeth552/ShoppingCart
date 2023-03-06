@@ -2,13 +2,14 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain.BoundedContext.Users;
+    using ShoppingCart.Domain.Users;
+    using ShoppingCart.Infrastructure.Data.EF.Entities;
 
-    internal class UserEntityConfiguration : IEntityTypeConfiguration<User>
+    internal class UserEntityConfiguration : IEntityTypeConfiguration<UserEntity>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserEntity> builder)
         {
-            builder.ToTable(nameof(User)).HasKey(t => t.Id);
+            builder.ToTable(nameof(UserEntity)).HasKey(t => t.Id);
 
             builder.Property(t => t.FirstName).IsRequired();
             builder.Property(t => t.LastName).IsRequired();
@@ -20,8 +21,8 @@
 
             builder.OwnsOne(u => u.ShoppingCart, navBldr =>
             {
-                navBldr.Property(sc => sc.TotalAmount).HasColumnName(nameof(ShoppingCart.TotalAmount));
-                navBldr.Property(m => m.ShoppingCartCreatedAt).HasColumnName(nameof(ShoppingCart.ShoppingCartCreatedAt));
+                navBldr.Property(sc => sc.TotalAmount).HasColumnName(nameof(ShoppingCartEntity.TotalAmount));
+                navBldr.Property(m => m.ShoppingCartCreatedAt).HasColumnName(nameof(ShoppingCartEntity.ShoppingCartCreatedAt));
 
                 navBldr.HasData(new
                 {

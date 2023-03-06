@@ -2,7 +2,7 @@
 {
     using FluentAssertions;
     using NUnit.Framework;
-    using ShoppingCart.Domain.BoundedContext.Users;
+    using ShoppingCart.Domain.Users;
 
     public class UserUnitTests
     {
@@ -10,7 +10,7 @@
         public void User_CreateShoppingCart_ShoppingCartAdded()
         {
             //Arrange
-            var user = new User("Peter", "Ivanov", "Pehso123", "Babydoll90", "peter@abv.bg", "0885578780");
+            var user = new User("Peter", "Ivanov", "Babydoll90", "peter@abv.bg", "0885578780");
 
             //Act
             user.CreateShoppingCart();

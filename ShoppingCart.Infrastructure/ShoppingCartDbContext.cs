@@ -2,8 +2,8 @@
 {
     using System.Reflection;
     using Microsoft.EntityFrameworkCore;
-    using ShoppingCart.Domain.BoundedContext.Comments;
-    using ShoppingCart.Domain.BoundedContext.Products;
+    using ShoppingCart.Domain.Comments;
+    using ShoppingCart.Domain.Products;
 
     public class ShoppingCartDbContext : DbContext
     {

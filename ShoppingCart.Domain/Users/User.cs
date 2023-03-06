@@ -1,21 +1,19 @@
-﻿namespace ShoppingCart.Domain.BoundedContext.Users
+﻿namespace ShoppingCart.Domain.Users
 {
     using System;
-    using global::ShoppingCart.Domain.BoundedContext.Products;
     using global::ShoppingCart.Domain.Common;
+    using global::ShoppingCart.Domain.Products;
 
     public class User : EntityBase
     {
-        public User(string firstName, string lastName, string userName, string password, string email, string phone)
+        public User(string firstName, string lastName, string userName, string email, string phone)
         {
             UserName = userName;
-            Password = password;
             Email = email;
             FirstName = firstName;
             LastName = lastName;
             Phone = phone;
             CreatedAt = DateTime.Now;
-            Products = new List<Product>();
         }
 
         public string UserName { get; }

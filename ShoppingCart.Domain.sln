@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.Infrastructure
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.UnitTests", "ShoppingCart.UnitTests\ShoppingCart.UnitTests.csproj", "{25E8C7A3-7BA0-45AD-96FB-CB62A104DE2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCartServices", "ShoppingCartServices\ShoppingCartServices.csproj", "{ED157635-75AB-4536-A83D-417CA5C047A5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,14 +51,6 @@ Global
 		{25E8C7A3-7BA0-45AD-96FB-CB62A104DE2B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{25E8C7A3-7BA0-45AD-96FB-CB62A104DE2B}.Release|x86.ActiveCfg = Release|Any CPU
 		{25E8C7A3-7BA0-45AD-96FB-CB62A104DE2B}.Release|x86.Build.0 = Release|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Debug|x86.Build.0 = Debug|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Release|x86.ActiveCfg = Release|Any CPU
-		{ED157635-75AB-4536-A83D-417CA5C047A5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
