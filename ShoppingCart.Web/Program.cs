@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ShoppingCart.Infrastructure;
 using ShoppingCartServices.Mapping;
 
@@ -7,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ShoppingCartDbContext>();
-
 
 builder.Services.AddAutoMapper(typeof(Program));
 
@@ -26,6 +26,9 @@ static IMapper ConfigureMapperService()
 
     return mapperServiceConfigureation.CreateMapper();
 }
+
+builder.Services.AddDbContext<ShoppingCartDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
