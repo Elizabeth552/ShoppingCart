@@ -2,13 +2,13 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain.Products;
+    using ShoppingCart.Infrastructure.Data.EF.Entities;
 
-    internal class ProductEntityConfiguration : IEntityTypeConfiguration<Product>
+    internal class ProductEntityConfiguration : IEntityTypeConfiguration<ProductEntity>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<ProductEntity> builder)
         {
-            builder.ToTable(nameof(Product)).HasKey(t => t.Id);
+            builder.ToTable(nameof(ProductEntity)).HasKey(t => t.Id);
 
             builder.Property(t => t.Name).HasMaxLength(125).IsRequired();
             builder.Property(t => t.Description).HasMaxLength(250).IsRequired();
@@ -23,8 +23,8 @@
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData(
-                new { Id = 1L, Name = "Purse", Description = "pretty purse", Category = "purses", Price = 111.99m, CreatedAt = DateTime.Now, Photo = "photo.jpeg", UserId = 1L },
-                new { Id = 2L, Name = "Scarf", Description = "blah", Category = "scarfs", Price = 300.99m, CreatedAt = DateTime.Now, Photo = "scarf.jpeg", UserId = 1L });
+                new { Id = 1, Name = "Purse", Description = "pretty purse", Category = "purses", Price = 111.99m, CreatedAt = DateTime.Now, Photo = "photo.jpeg", UserId = 1 },
+                new { Id = 2, Name = "Scarf", Description = "blah", Category = "scarfs", Price = 300.99m, CreatedAt = DateTime.Now, Photo = "scarf.jpeg", UserId = 1 });
         }
     }
 }

@@ -2,13 +2,13 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain.Comments;
+    using ShoppingCart.Infrastructure.Data.EF.Entities;
 
-    internal class CommentEntityConfiguration : IEntityTypeConfiguration<Comment>
+    internal class CommentEntityConfiguration : IEntityTypeConfiguration<CommentEntity>
     {
-        public void Configure(EntityTypeBuilder<Comment> builder)
+        public void Configure(EntityTypeBuilder<CommentEntity> builder)
         {
-            builder.ToTable(nameof(Comment)).HasKey(t => t.Id);
+            builder.ToTable(nameof(CommentEntity)).HasKey(t => t.Id);
 
             builder.Property(t => t.Content).HasMaxLength(225).IsRequired();
 
@@ -18,8 +18,8 @@
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasData(
-                new { Id = 1L, Content = "very good my friend", ProductId = 1L },
-                new { Id = 2L, Content = "im no like", ProductId = 2L });
+                new { Id = 1, Content = "very good my friend", ProductId = 1 },
+                new { Id = 2, Content = "im no like", ProductId = 2 });
         }
     }
 }

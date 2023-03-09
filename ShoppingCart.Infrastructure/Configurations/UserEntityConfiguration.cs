@@ -2,7 +2,6 @@
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using ShoppingCart.Domain.Users;
     using ShoppingCart.Infrastructure.Data.EF.Entities;
 
     internal class UserEntityConfiguration : IEntityTypeConfiguration<UserEntity>
@@ -16,8 +15,13 @@
             builder.Property(t => t.UserName).IsRequired();
             builder.Property(t => t.Email).IsRequired();
             builder.Property(t => t.CreatedAt).IsRequired();
-            builder.Property(t => t.Phone).IsRequired();
-            builder.Property(t => t.Password).IsRequired();
+            builder.Property(t => t.PhoneNumber).IsRequired();
+            builder.Ignore(u => u.AccessFailedCount);
+            builder.Ignore(u => u.LockoutEnd);
+            builder.Ignore(u => u.LockoutEnabled);
+            builder.Ignore(u => u.TwoFactorEnabled);
+            builder.Ignore(u => u.EmailConfirmed);
+            builder.Ignore(u => u.PhoneNumberConfirmed);
 
             builder.OwnsOne(u => u.ShoppingCart, navBldr =>
             {
@@ -26,7 +30,7 @@
 
                 navBldr.HasData(new
                 {
-                    UserId = 1L,
+                    UserId = 1,
                     TotalAmount = 0m,
                     ShoppingCartCreatedAt = DateTime.Now
                 });
@@ -41,13 +45,13 @@
             builder.HasData(
             new
             {
-                Id = 1L,
+                Id = 1,
                 FirstName = "Pesho",
                 LastName = "Peshov",
                 UserName = "pesho_boga",
                 Email = "pesho@pesho.be",
                 CreatedAt = DateTime.Now,
-                Phone = "12345678",
+                PhoneNumber = "12345678",
                 Password = "ne kazvai na nikoi"
             });
         }

@@ -1,11 +1,11 @@
 ﻿namespace ShoppingCart.Infrastructure
 {
     using System.Reflection;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using ShoppingCart.Domain.Comments;
-    using ShoppingCart.Domain.Products;
+    using ShoppingCart.Infrastructure.Data.EF.Entities;
 
-    public class ShoppingCartDbContext : DbContext
+    public class ShoppingCartDbContext : IdentityDbContext<UserEntity, RoleEntity, int>
     {
         private const string ConnectionString = "Server=.;Database=ShoppingCartDB;Encrypt=False;Integrated Security=True;Trusted_Connection=True;MultipleActiveResultSets=true";
 
@@ -26,8 +26,8 @@
             base.OnConfiguring(options);
         }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<ProductEntity> Products { get; set; }
+        public DbSet<CommentEntity> Comments { get; set; }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {

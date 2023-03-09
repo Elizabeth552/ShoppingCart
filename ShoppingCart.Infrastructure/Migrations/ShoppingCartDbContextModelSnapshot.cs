@@ -22,50 +22,153 @@ namespace ShoppingCart.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Comments.Comment", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.CommentEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(225)
                         .HasColumnType("nvarchar(225)");
 
-                    b.Property<long>("ProductId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Comment", (string)null);
+                    b.ToTable("CommentEntity", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = 1L,
+                            Id = 1,
                             Content = "very good my friend",
-                            ProductId = 1L
+                            ProductId = 1
                         },
                         new
                         {
-                            Id = 2L,
+                            Id = 2,
                             Content = "im no like",
-                            ProductId = 2L
+                            ProductId = 2
                         });
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Products.Product", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.ProductEntity", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Category")
                         .IsRequired()
@@ -94,54 +197,89 @@ namespace ShoppingCart.Infrastructure.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Product", (string)null);
+                    b.ToTable("ProductEntity", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = 1L,
+                            Id = 1,
                             Category = "purses",
-                            CreatedAt = new DateTime(2023, 2, 18, 19, 50, 7, 745, DateTimeKind.Local).AddTicks(7182),
+                            CreatedAt = new DateTime(2023, 3, 9, 10, 48, 38, 575, DateTimeKind.Local).AddTicks(4048),
                             Description = "pretty purse",
                             Name = "Purse",
                             Photo = "photo.jpeg",
                             Price = 111.99m,
-                            UserId = 1L
+                            UserId = 1
                         },
                         new
                         {
-                            Id = 2L,
+                            Id = 2,
                             Category = "scarfs",
-                            CreatedAt = new DateTime(2023, 2, 18, 19, 50, 7, 745, DateTimeKind.Local).AddTicks(7216),
+                            CreatedAt = new DateTime(2023, 3, 9, 10, 48, 38, 575, DateTimeKind.Local).AddTicks(4081),
                             Description = "blah",
                             Name = "Scarf",
                             Photo = "scarf.jpeg",
                             Price = 300.99m,
-                            UserId = 1L
+                            UserId = 1
                         });
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Users.User", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.RoleEntity", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -151,39 +289,108 @@ namespace ShoppingCart.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Phone")
-                        .IsRequired()
+                    b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("UserEntity", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = 1L,
-                            CreatedAt = new DateTime(2023, 2, 18, 19, 50, 7, 747, DateTimeKind.Local).AddTicks(9405),
+                            Id = 1,
+                            CreatedAt = new DateTime(2023, 3, 9, 10, 48, 38, 577, DateTimeKind.Local).AddTicks(8837),
                             Email = "pesho@pesho.be",
                             FirstName = "Pesho",
                             LastName = "Peshov",
-                            Password = "ne kazvai na nikoi",
-                            Phone = "12345678",
+                            PhoneNumber = "12345678",
                             UserName = "pesho_boga"
                         });
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Comments.Comment", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
-                    b.HasOne("ShoppingCart.Domain.BoundedContext.Products.Product", "Product")
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.RoleEntity", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<int>", b =>
+                {
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
+                {
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<int>", b =>
+                {
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.RoleEntity", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<int>", b =>
+                {
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.CommentEntity", b =>
+                {
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.ProductEntity", "Product")
                         .WithMany("Comments")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -192,9 +399,9 @@ namespace ShoppingCart.Infrastructure.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Products.Product", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.ProductEntity", b =>
                 {
-                    b.HasOne("ShoppingCart.Domain.BoundedContext.Users.User", "User")
+                    b.HasOne("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", "User")
                         .WithMany("Products")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -203,12 +410,12 @@ namespace ShoppingCart.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Users.User", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", b =>
                 {
-                    b.OwnsOne("ShoppingCart.Domain.BoundedContext.Users.ShoppingCart", "ShoppingCart", b1 =>
+                    b.OwnsOne("ShoppingCart.Infrastructure.Data.EF.Entities.ShoppingCartEntity", "ShoppingCart", b1 =>
                         {
-                            b1.Property<long>("UserId")
-                                .HasColumnType("bigint");
+                            b1.Property<int>("UserId")
+                                .HasColumnType("int");
 
                             b1.Property<DateTime>("ShoppingCartCreatedAt")
                                 .HasColumnType("datetime2")
@@ -221,7 +428,7 @@ namespace ShoppingCart.Infrastructure.Migrations
 
                             b1.HasKey("UserId");
 
-                            b1.ToTable("User");
+                            b1.ToTable("UserEntity");
 
                             b1.WithOwner("User")
                                 .HasForeignKey("UserId");
@@ -231,8 +438,8 @@ namespace ShoppingCart.Infrastructure.Migrations
                             b1.HasData(
                                 new
                                 {
-                                    UserId = 1L,
-                                    ShoppingCartCreatedAt = new DateTime(2023, 2, 18, 19, 50, 7, 747, DateTimeKind.Local).AddTicks(8649),
+                                    UserId = 1,
+                                    ShoppingCartCreatedAt = new DateTime(2023, 3, 9, 10, 48, 38, 577, DateTimeKind.Local).AddTicks(8044),
                                     TotalAmount = 0m
                                 });
                         });
@@ -240,12 +447,12 @@ namespace ShoppingCart.Infrastructure.Migrations
                     b.Navigation("ShoppingCart");
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Products.Product", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.ProductEntity", b =>
                 {
                     b.Navigation("Comments");
                 });
 
-            modelBuilder.Entity("ShoppingCart.Domain.BoundedContext.Users.User", b =>
+            modelBuilder.Entity("ShoppingCart.Infrastructure.Data.EF.Entities.UserEntity", b =>
                 {
                     b.Navigation("Products");
                 });
