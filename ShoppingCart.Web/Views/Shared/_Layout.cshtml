@@ -28,6 +28,116 @@
     <![endif]-->
 </head>
 <body>
+            <!--//================.Preloader Start==============//-->
+        <div class="preloader">
+            <ul class="loader">
+                <li>
+                    <div class="circle"></div>
+                    <div class="ball"></div>
+                </li>
+                <li>
+                    <div class="circle"></div>
+                    <div class="ball"></div>
+                </li>
+                <li>
+                    <div class="circle"></div>
+                    <div class="ball"></div>
+                </li>
+                <li>
+                    <div class="circle"></div>
+                    <div class="ball"></div>
+                </li>
+                <li>
+                    <div class="circle"></div>
+                    <div class="ball"></div>
+                </li>
+            </ul>
+        </div>
+        <!--//================.Preloader End==============//-->
+        <!--//================.Model-Box Start==============//-->
+        <div id="myModal_two" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <img src="assets/img/all_img/about-banner2.jpg" alt="">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title">sign up for our Newsletter</h4>
+                        <p>Subscribe to our mailing list to get up to 50% off in the all weekend of november - latest designed by zplus</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email Address">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//================.Model-Box End==============//-->
+        <!--//================.Top Section Start==============//-->
+        <div class="top-sec">
+            <div class="container-fluid">
+                <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="row">
+                        <div class="top-left-sec">
+                            <ul class="top-list">
+                                <li><a href="index.html">home</a></li>
+                                <li><a href="">delivery</a></li>
+                                <li><a href="blog-style-1.html">blog</a></li>
+                                <li class="hidden-xs"><a href="contact.html">contacts</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-6">
+                    <div class="row">
+                        <div class="top-right-sec">
+                            <ul class="top-list">
+                                <li class="hidden-xs">free shipping on all orders. no minimum purchase.</li>
+                                <li>
+                                    <div class="search-part" id="serchopen">
+                                        <!-- Start Top Search -->
+                                        <div class="menu-search">
+                                            <a href="#search" class="clicksearch"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                        </div>
+                                        <!-- End Top Search -->
+                                    </div>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option value="0">En</option>
+                                        <option value="1">En</option>
+                                        <option value="2">En</option>
+                                        <option value="3">En</option>
+                                    </select>
+                                </li>
+                                <li>
+                                    <select>
+                                        <option value="0">USD</option>
+                                        <option value="1">USD</option>
+                                        <option value="2">USD</option>
+                                        <option value="3">USD</option>
+                                    </select>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-search" id="searchclose">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-addon close-search"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//================.Top Section End==============//-->
     <!--//================.Header Section==============//-->
     <header>
         <div id="main-menu" class="wa-main-menu">
@@ -362,6 +472,7 @@
             <!--  .Menu -->
         </div>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -408,7 +519,7 @@
                             <li><a href="">pages</a></li>
                             <li><a href="">women’s</a></li>
                             <li><a href="">men’s</a></li>
-                            <li><a href="">contact</a></li>
+                            <li><a asp-controller="Home" asp-action="Contact">contact</a></li>
                             <li><a href=""></a></li>
                         </ul>
                     </div>
