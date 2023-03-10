@@ -1,341 +1,749 @@
-﻿@using ShoppingCart.Web.Models
-@model List<ShoppingCart.Web.Models.UserRolesViewModel>
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-     @* <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
-      <!-- end loader -->*@
-      <!-- header -->
-      
-      <!-- end header inner -->
-      <!-- end header -->
-      <!-- banner -->
-      <section class="banner_main">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-8">
-                  <div class="text-bg">
-                     <h1> <span class="blodark"> Romofyi </span> <br>Trands 2019</h1>
-                     <p>A huge fashion collection for ever </p>
-                     <a class="read_more" href="#">Shop now</a>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="ban_img">
-                     <figure><img src="images/ban_img.png" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- end banner -->
-      <!-- six_box section -->
-      <div class="six_box">
-         <div class="container-fluid">
-            <div class="row">
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/shoes.png" alt="#"/></i>
-                     <span>Shoes</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/underwear.png" alt="#"/></i>
-                     <span>underwear</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/pent.png" alt="#"/></i>
-                     <span>Pante & socks</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/t_shart.png" alt="#"/></i>
-                     <span>T-shirt & tankstop</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx yellow_bg">
-                     <i><img src="images/jakit.png" alt="#"/></i>
-                     <span>cardigans & jumpers</span>
-                  </div>
-               </div>
-               <div class="col-md-2 col-sm-4 pa_left">
-                  <div class="six_probpx bluedark_bg">
-                     <i><img src="images/helbet.png" alt="#"/></i>
-                     <span>Top & hat</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end six_box section -->
-      <!-- project section -->
-      <div id="project" class="project">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Featured Products</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-            <div class="product_main">
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/shoes1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-            
-             
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/shoes2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/shoes5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-            
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/tisat1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/tisat2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/tisat5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-            
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/mix1.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box ">
-                     <div class="dark_white_bg" ><img  src="images/mix2.png" alt="#"/></div>
-                     <h3 >Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix3.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix4.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-               
-                  <div class="project_box">
-                     <div class="dark_white_bg" ><img  src="images/mix5.png" alt="#"/></div>
-                     <h3>Short Openwork Cardigan $120.00</h3>
-                  </div>
-              
-               <div class="col-md-12">
-                  <a class="read_more" href="#">See More</a>
-               </div>
-            </div>
-            </div>
-         </div>
-      </div>
-      <!-- end project section -->
-      <!-- fashion section -->
-      <div class="fashion">
-         <img src="images/fashion.jpg" alt="#"/>
-      </div>
-      <!-- end fashion section -->
-      <!-- news section -->
-      <div class="news">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <div class="titlepage">
-                     <h2>Letest News</h2>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img1.jpg"></figure>
+﻿<a href="Contact.cshtml">TEST</a>
+<!--//================.Preloader Start==============//-->
+    <div class="preloader">
+        <ul class="loader">
+            <li>
+                <div class="circle"></div>
+                <div class="ball"></div>
+            </li>
+            <li>
+                <div class="circle"></div>
+                <div class="ball"></div>
+            </li>
+            <li>
+                <div class="circle"></div>
+                <div class="ball"></div>
+            </li>
+            <li>
+                <div class="circle"></div>
+                <div class="ball"></div>
+            </li>
+            <li>
+                <div class="circle"></div>
+                <div class="ball"></div>
+            </li>
+        </ul>
+    </div>
+    <!--//================.Preloader End==============//-->
+    <!--//================.Model-Box Start==============//-->
+    <div id="myModal_two" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="assets/img/all_img/about-banner2.jpg" alt="">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">sign up for our Newsletter</h4>
+                    <p>Subscribe to our mailing list to get up to 50% off in the all weekend of november - latest designed by zplus</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address">
                         </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img2.jpg"></figure>
-                        </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-12 margin_top40">
-                  <div class="row d_flex">
-                     <div class="col-md-5">
-                        <div class="news_img">
-                           <figure><img src="images/news_img3.jpg"></figure>
-                        </div>
-                     </div>
-                     <div class="col-md-7">
-                        <div class="news_text">
-                           <h3>Specimen book. It has survived not only five</h3>
-                           <span>7 July 2019</span> 
-                           <div class="date_like">
-                              <span>Like </span><span class="pad_le">Comment</span>
-                           </div>
-                           <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end news section -->
-      <!-- newslatter section -->
-      <div  class="newslatter">
-         <div class="container">
-            <div class="row d_flex">
-               <div class="col-md-5">
-                  <h3 class="neslatter">Subscribe To The Newsletter</h3>
-               </div>
-               <div class="col-md-7">
-                  <form class="news_form">
-                     <input class="letter_form" placeholder=" Enter your email" type="text" name="Enter your email">
-                     <button class="sumbit">Subscribe</button>
-                  </form>
-               </div>
+        </div>
+    </div>
+    <!--//================.Model-Box End==============//-->
+    <!--//================.Top Section Start==============//-->
+    <div class="top-sec">
+        <div class="container-fluid">
+            <div class="col-md-4 col-sm-4 col-xs-6">
+                <div class="row">
+                    <div class="top-left-sec">
+                        <ul class="top-list">
+                            <li><a href="index.html">home</a></li>
+                            <li><a href="">delivery</a></li>
+                            <li><a href="blog-style-1.html">blog</a></li>
+                            <li class="hidden-xs"><a href="contact.html">contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end newslatter section -->
-      <!-- three_box section -->
-      <div class="three_box">
-         <div class="container">
+            <div class="col-md-8 col-sm-8 col-xs-6">
+                <div class="row">
+                    <div class="top-right-sec">
+                        <ul class="top-list">
+                            <li class="hidden-xs">free shipping on all orders. no minimum purchase.</li>
+                            <li>
+                                <div class="search-part" id="serchopen">
+                                    <!-- Start Top Search -->
+                                    <div class="menu-search">
+                                        <a href="#search" class="clicksearch"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                    </div>
+                                    <!-- End Top Search -->
+                                </div>
+                            </li>
+                            <li>
+                                <select>
+                                    <option value="0">En</option>
+                                    <option value="1">En</option>
+                                    <option value="2">En</option>
+                                    <option value="3">En</option>
+                                </select>
+                            </li>
+                            <li>
+                                <select>
+                                    <option value="0">USD</option>
+                                    <option value="1">USD</option>
+                                    <option value="2">USD</option>
+                                    <option value="3">USD</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="top-search" id="searchclose">
+        <div class="container-fluid">
             <div class="row">
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_mony.png"></i>
-                     <span>Money Back</span>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_gift.png"></i>
-                     <span>Special Gift</span>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <div class="gift_box">
-                     <i><img src="images/icon_car.png"></i>
-                     <span>Free Shipping</span>
-                  </div>
-               </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                    <span class="input-group-addon close-search"><i class="fa fa-search" aria-hidden="true"></i></span>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- end three_box section -->
-
-      <!--  footer -->
-      <footer>
-         <div class="footer">
+        </div>
+    </div>
+    <!--//================.Top Section End==============//-->
+    
+    <!--//================.Slider Section==============//-->
+    <section class="main-legging">
+        <div class="slidersec">
+            <div id="yoga-slider" class="owl-carousel owl-theme">
+                <div class="item">
+                    <figure>
+                        <img src="assets/img/slider/slider02.jpg" alt="">
+                        <figcaption class="slider-text">
+                            <h2>yoga leggings</h2>
+                            <h3>women's athletic apparel</h3>
+                            <a href="" class="slider-btn">shop now!</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="item">
+                    <figure>
+                        <img src="assets/img/slider/slider01.jpg" alt="">
+                        <figcaption class="slider-text">
+                            <h2>yoga leggings</h2>
+                            <h3>women's athletic apparel</h3>
+                            <a href="" class="slider-btn">shop now!</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="item">
+                    <figure>
+                        <img src="assets/img/slider/slider3.jpg" alt="">
+                        <figcaption class="slider-text">
+                            <h2>yoga leggings</h2>
+                            <h3>women's athletic apparel</h3>
+                            <a href="" class="slider-btn">shop now!</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--//================.Slider Section End==============//-->
+    <div class="inner-content">
+        <!--//================.Shop Section==============//-->
+        <div class="shop-index">
             <div class="container">
-               <div class="row">
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>INFORMATION </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>MY ACCOUNT </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>ABOUT  </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-                  <div class="col-md-3">
-                     <div class="inror_box">
-                        <h3>CONTACTS  </h3>
-                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
-                     </div>
-                  </div>
-               </div>
+                <div class="shop-sec">
+                    <p>up to 50% off in the all weekend of november - latest designed by zplus</p>
+                </div>
+                <div class="shop-images">
+                    <div class="row">
+                        <div class="grid">
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <figure class="effect-chico">
+                                    <img src="assets/img/all_img/shop1.jpg" alt="">
+                                    <figcaption>
+                                        <div class="shop_content">
+                                            <p>Collection</p>
+                                            <h2>top brands</h2>
+                                            <a href="" class="slider-btn">shop now!</a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <figure class="effect-chico">
+                                    <img src="assets/img/all_img/shop2.jpg" alt="">
+                                    <figcaption>
+                                        <div class="shop_content">
+                                            <p>Collection</p>
+                                            <h2>high waist pants</h2>
+                                            <a href="" class="slider-btn">shop now!</a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <figure class="effect-chico">
+                                    <img src="assets/img/all_img/shop3.jpg" alt="">
+                                    <figcaption>
+                                        <div class="shop_content">
+                                            <p>Collection</p>
+                                            <h2>leggings</h2>
+                                            <a href="" class="slider-btn">shop now!</a>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-img">
+                    <div id="fashion-slider" class="owl-carousel owl-theme">
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand1.png" alt=""></a></figure>
+                        </div>
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand2.png" alt=""></a></figure>
+                        </div>
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand3.png" alt=""></a></figure>
+                        </div>
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand4.png" alt=""></a></figure>
+                        </div>
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand5.png" alt=""></a></figure>
+                        </div>
+                        <div class="item">
+                            <figure><a href=""><img src="assets/img/brand/brand6.png" alt=""></a></figure>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="copyright">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by<a href="https://html.design/"> Free Html Templates</a></p>
-                     </div>
-                  </div>
-               </div>
+        </div>
+        <!--//================.Shop Section End==============//-->
+        <!--//================.Product Section==============//-->
+        <section class="product-sec padTB60">
+            <div class="container">
+                <h3>our products</h3>
+                <div class="product-detail padT60">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product1.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-one">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product2.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-two">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product3.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-three">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 hidden-sm product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product4.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample product-list">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-four">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product5.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-five">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product6.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-six">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product7.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-seven">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-12 hidden-sm product-list">
+                            <div class="product-img">
+                                <figure class="product-overlay">
+                                    <img src="assets/img/product/product8.jpg" alt="">
+                                    <figcaption>
+                                        <span class="vertical">new</span>
+                                        <ul class="product-icon">
+                                            <li><a href="" class="square" data-toggle="modal" data-target="#myModal"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a></li>
+                                            <li><a href="" class="square"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
+                                        </ul>
+                                    </figcaption>
+                                </figure>
+                                <div class="product-sample">
+                                    <h5><a href="product-detail.html">zplus product sample</a></h5>
+                                    <div class="col-md-7 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <p>$55.00 <del>$120.00</del></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-6 col-xs-6">
+                                        <div class="row">
+                                            <ul class="product-color-six">
+                                                <li><span></span></li>
+                                                <li><span></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <a href="" class="product-btn">view more</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
+        </section>
+        <!--//================.Product Section End==============//-->
+        <!--//================.Banner Section==============//-->
+        <section>
+            <div class="banner-sec">
+                <div class="container">
+                    <div class="banner-text">
+                        <h2>leggings fashion</h2>
+                        <h3>women's athletic apparel</h3>
+                        <a href="" class="slider-btn">shop now!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//================.Banner Section End==============//-->
+        <!--//================.Sale Section==============//-->
+        <section class="shop-index our-sale padTB60">
+            <div class="container">
+                <div class="padLR0">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 resmar">
+                            <div class="product-sale">
+                                <figure>
+                                    <img src="assets/img/product/product9.jpg" alt="">
+                                    <figcaption>
+                                        <p>big sale</p>
+                                        <h2>up to 50%</h2>
+                                        <a href="" class="product-btn">shop now!</a>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 resmar">
+                            <div class="product-timer">
+                                <figure>
+                                    <img src="assets/img/product/product10.jpg" alt="">
+                                    <figcaption class="product-sample">
+                                        <div class="col-md-12 col-sm-12 col-xs-12 padL0">
+                                            <div class="row">
+                                                <div id="demo-product">
+                                                    <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                                        <div class="timer">00</div>
+                                                        <span>days</span>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                                        <div class="timer">00</div>
+                                                        <span>hrs</span>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                                        <div class="timer">00</div>
+                                                        <span>mins</span>
+                                                    </div>
+                                                    <div class="col-md-3 col-sm-3 col-xs-3 text-center">
+                                                        <div class="timer">00</div>
+                                                        <span>secs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="row">
+                                                <h5>zplus product sample</h5>
+                                                <p>$55.00 <del>$120.00</del></p>
+                                            </div>
+                                        </div>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="product-lookbook">
+                                <figure>
+                                    <img src="assets/img/product/product11.jpg" alt="">
+                                    <figcaption>
+                                        <h5>collection</h5>
+                                        <h2>lookbook</h2>
+                                        <p>women's athletic apparel</p>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//================.Instagram Section==============//-->
+        <section class="insta-bg">
+            <div class="container">
+                <div class="insta-sec">
+                    <h3>zplus on instagram</h3>
+                    <div id="insta-slider" class="owl-carousel owl-theme padT60">
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider4.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider5.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider6.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider7.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider8.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="insta-img">
+                                <figure class="insta-overlay">
+                                    <img src="assets/img/slider/slider6.jpg" alt="">
+                                    <figcaption>
+                                        <span><a href=""><i class="fa fa-eye" aria-hidden="true"></i></a></span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--//================.Instagram Section End==============//-->
+    
+    <!--//================Quick view Start ==============//-->
+    <div class="quick-vive-popap">
+        <div class="container">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="Quick-view-popup modal-content text-left">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="col-md-12 col-xs-12 popap-open-box">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 marB30">
+                                            <figure>
+                                                <img src="assets/img/product/product1.jpg" alt="">
+                                            </figure>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12 responsive-top">
+                                    <h3 class="theme-headdings text-left  product-detail-title s"><a href="#">zplus product sample</a></h3>
+                                    <div class="product-rating">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                            <li><a href="#">3 review(s)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="per-box texy-left marT15">
+                                        <p>Morbi mollis vestibulum sollicitudin. in eros a justo facilisis rutrum. Aenean id ullamcorper libero. tempor et purus vitae, consectetur varius nunc.</p>
+                                    </div>
+                                    <div class="product-detail-btn  padT15">
+                                        <div class="form-row col-sm-5 col-xs-12 country-boxs billing-box select ">
+                                            <div class="row">
+                                                <p>
+                                                    <label for="billing_state28">Material</label>
+                                                    <select class="billing_state28" id="billing_state28" name="billing_state">
+                                                        <option value="">Select Color</option>
+                                                        <option value="AP">Red</option>
+                                                        <option value="AR">Blue</option>
+                                                        <option value="AS">Green</option>
+                                                        <option value="BR">Yellow</option>
+                                                        <option value="CT">Black</option>
+                                                    </select>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-row col-sm-5 country-boxs billing-box select down ">
+                                            <div class="row ">
+                                                <p>
+                                                    <label for="billing_state27">Brands</label>
+                                                    <select class="billg_state" id="billing_state27" name="billing_state">
+                                                        <option value="">Select Brands</option>
+                                                        <option value="AP">PTM</option>
+                                                        <option value="AR">Clara</option>
+                                                        <option value="AS">Ziveg</option>
+                                                        <option value="BR">Clara</option>
+                                                    </select>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-7 row">
+                                        <div class="order-data box order-table ">
+                                            <div class="order-table-cell order-text product-input-type">
+                                                <input type="number" value="01" class="qty" name="qty1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-sm-5 product-box-btm-blog row">
+                                        <a href="" class="slider-btn marT">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//================Quick view End ==============//-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files asneeded -->
+    <script src="assets/plugins/megamenu/js/hover-dropdown-menu.js"></script>
+    <script src="assets/plugins/megamenu/js/jquery.hover-dropdown-menu-addon.js"></script>
+    <script src="assets/plugins/fancybox/js/jquery.fancybox.pack.js"></script>
+    <script src="assets/plugins/fancybox/js/jquery.fancybox-media.js"></script>
+    <script src="assets/plugins/jquery-bxslider/js/jquery.bxslider.min.js"></script>
+    <script src="assets/plugins/owl-carousel/js/owl.carousel.js"></script>
+    <script src="assets/plugins/owl-carousel/js/owl.carousel.min.js"></script>
+    <script src="assets/plugins/jquery-ui/js/jquery-ui.js"></script>
+    <script src="assets/js/main.js"></script>
