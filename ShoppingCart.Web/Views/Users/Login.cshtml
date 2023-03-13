@@ -1,0 +1,51 @@
+﻿@using ShoppingCart.Web.Models.Users;
+@model LoginViewModel
+
+<div class="inner-content">
+    <!--//================.Breadcrumb Section==============//-->
+    <div class="breadcrumb-section">
+        <div class="container">
+            <h3>login</h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">login</li>
+            </ul>
+        </div>
+    </div>
+    <!--//================.Breadcrumb Section End==============//-->
+    <!--//================.Sign IN Section==============//-->
+    <section class="padTB60">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="reg-page">
+                        <div class="show-field" id="loginbox">
+                            <form asp-controller="Users" asp-action="LoginPost" method="post">
+                                <label>email</label>
+                                <input type="text" placeholder="Enter Email" class="marB30" asp-for="Email">
+                                <label>password</label>
+                                <input type="password" placeholder="Enter Password" class="marB30" asp-for="Password">
+                                <input type="submit" name="sub" value="SIGN IN" class="reg-btn">
+                            </form>
+                            <a href="" class="reg-in view-password">forgot your password?</a>
+                            <a asp-controller="Users" asp-action="Register" class="reg-in">register new account</a>
+                        </div>
+                        <div class="hide-field" id="forget">
+                            <h3>reset password</h3>
+                            <p>We will send you an email to reset your password.</p>
+                            <form method="post">
+                                <label>email</label>
+                                <input type="text" placeholder="Enter Email" value="" name="fname" class="marB30">
+                                <input type="submit" name="sub" value="SUBMIT" class="reg-btn">
+                            </form>
+                            <a href="" class="sign backto">cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--//================.Sign IN Section End==============//-->

@@ -28,6 +28,14 @@
             return View();
         }
 
+        public IActionResult ProductDetail(int id)
+        {
+            // var product productrepository.GetByIdid((
+
+            // return view(product(
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

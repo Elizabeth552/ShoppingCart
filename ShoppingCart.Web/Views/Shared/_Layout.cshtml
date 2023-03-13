@@ -54,7 +54,7 @@
         </ul>
     </div>
     <!--//================.Preloader End==============//-->
-    <!--//================.Model-Box Start==============//-->
+   @* <!--//================.Model-Box Start==============//-->
     <div id="myModal_two" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <!--//================.Model-Box End==============//-->
+    <!--//================.Model-Box End==============//-->*@
     <!--//================.Top Section Start==============//-->
     <div class="top-sec">
         <div class="container-fluid">
@@ -85,7 +85,7 @@
                         <ul class="top-list">
                             <li><a asp-controller="Home" asp-action="Index">home</a></li>
                             <li><a href="">delivery</a></li>
-                            <li><a asp-controller="Blog" asp-action="Index">blog</a></li>
+                            <li><a asp-controller="Users" asp-action="Login">login</a></li>
                             <li class="hidden-xs"><a asp-controller="Home" asp-action="Contact">contacts</a></li>
                         </ul>
                     </div>
@@ -311,7 +311,7 @@
                                                         <ul class="dropdown-menu">
                                                             <li><a href="collection.html">collection</a></li>
                                                             <li><a href="collection-sidebar.html">collection-sidebar</a></li>
-                                                            <li><a href="product-detail.html">product-detail</a></li>
+                                                            <li><a asp-controller="Home" asp-action="ProductDetail">product-detail</a></li>
                                                             <li class="left-side">
                                                                 <a href="#" class="hidden-xs">continue shopping <i class="fa fa-angle-right hidden-xs" aria-hidden="true"></i></a>
                                                                 <a href="#" class="hidden-sm hidden-lg hidden-md">continue shopping<i class="fa fa-angle-down" aria-hidden="true"></i></a>
