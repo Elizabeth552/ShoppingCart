@@ -59,5 +59,12 @@
         {
             return View();
         }
+
+        [HttpPost("RegisterPost")]
+        public IActionResult RegisterPost([FromForm] RegisterViewModel model)
+        {
+            //var result = _userManager.CreateAsync()
+            return View();
+        }
     }
 }

@@ -12,7 +12,6 @@
 
         public string LastName { get; set; }
 
-
         public DateTime CreatedAt { get; set; }
 
         public ShoppingCartEntity? ShoppingCart { get; set; }
