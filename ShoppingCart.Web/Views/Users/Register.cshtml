@@ -1,4 +1,7 @@
-﻿<!--//================.Header Section End==============//-->
+﻿@using ShoppingCart.Web.Models.Users
+@model RegisterViewModel
+
+<!--//================.Header Section End==============//-->
 <div class="inner-content">
     <!--//================.Breadcrumb Section==============//-->
     <div class="breadcrumb-section">
@@ -19,15 +22,31 @@
             <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
                 <div class="row">
                     <div class="reg-page">
-                        <form method="post">
+                        <form id="registerForm" method="post" asp-action="RegisterPost" asp-controller="Users" onsubmit="return formValidation()">
                             <label>first name</label>
-                            <input type="text" placeholder="Enter First Name" value="" name="fname" class="marB30">
+                            <input id="firstName" type="text" placeholder="Enter First Name" value="" class="marB30" asp-for="FirstName">
+                            
                             <label>last name</label>
-                            <input type="text" placeholder="Enter Last Name" value="" name="fname" class="marB30">
+                            <input id="lastName" type="text" placeholder="Enter Last Name" value="" class="marB30" asp-for="LastName">
+                            
                             <label>email</label>
-                            <input type="text" placeholder="Enter Email" value="" name="fname" class="marB30">
+                            <input id="email" type="text"  placeholder="Enter Email" value="" class="marB30" asp-for="Email">
+                            
+                            <label>phone number</label>
+                            <input id="phoneNumber" type="text" placeholder="Enter Phone Number" value="" class="marB30" asp-for="Phone">
+                            
+                            <label>Street</label>
+                            <input id="street" type="text" placeholder="Enter Street" value="" class="marB30" asp-for="Street">
+                            
+                            <label>City</label>
+                            <input id="city" type="text" placeholder="Enter City" value="" class="marB30" asp-for="City">
+                            
+                            <label>House Number</label>
+                            <input id="houseNumber" type="text" placeholder="Enter House Number" value="" class="marB30" asp-for="HouseNumber">
+                            
                             <label>password</label>
-                            <input type="password" placeholder="Enter Password" value="" name="pwd" class="marB30">
+                            <input id="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                            placeholder="Enter Password" value="" class="marB30" asp-for="Password">
                             <input type="submit" name="sub" value="CREATE" class="reg-btn">
                             <a href="login.html" class="sign">sign in</a>
                         </form>
@@ -37,4 +56,5 @@
         </div>
     </div>
 </div>
-<!--//================.Register Section End==============//-->		
+<!--//================.Register Section End==============//-->
+<script src="~/assets/js/register.js"></script>

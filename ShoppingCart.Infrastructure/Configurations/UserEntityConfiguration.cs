@@ -12,16 +12,21 @@
 
             builder.Property(t => t.FirstName).IsRequired();
             builder.Property(t => t.LastName).IsRequired();
-            builder.Property(t => t.UserName).IsRequired();
             builder.Property(t => t.Email).IsRequired();
             builder.Property(t => t.CreatedAt).IsRequired();
             builder.Property(t => t.PhoneNumber).IsRequired();
+            builder.Property(t => t.City).IsRequired();
+            builder.Property(t => t.Street).IsRequired();
+            builder.Property(t => t.HouseNumber).IsRequired();
             builder.Ignore(u => u.AccessFailedCount);
             builder.Ignore(u => u.LockoutEnd);
             builder.Ignore(u => u.LockoutEnabled);
             builder.Ignore(u => u.TwoFactorEnabled);
             builder.Ignore(u => u.EmailConfirmed);
             builder.Ignore(u => u.PhoneNumberConfirmed);
+            builder.Ignore(u => u.UserName);
+            builder.Ignore(u => u.NormalizedUserName);
+            builder.Ignore(u => u.NormalizedEmail);
 
             builder.OwnsOne(u => u.ShoppingCart, navBldr =>
             {
@@ -48,11 +53,13 @@
                 Id = 1,
                 FirstName = "Pesho",
                 LastName = "Peshov",
-                UserName = "pesho_boga",
                 Email = "pesho@pesho.be",
                 CreatedAt = DateTime.Now,
                 PhoneNumber = "12345678",
-                Password = "ne kazvai na nikoi"
+                Password = "ne kazvai na nikoi",
+                City = "burgas",
+                Street = "Ivan",
+                HouseNumber = "23M",
             });
         }
     }

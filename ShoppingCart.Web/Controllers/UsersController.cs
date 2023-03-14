@@ -1,8 +1,10 @@
 ﻿namespace ShoppingCart.Web.Controllers
 {
+    using AutoMapper;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
+    using ShoppingCart.Domain.Users;
     using ShoppingCart.Infrastructure.Data.EF.Entities;
     using ShoppingCart.Web.Models;
     using ShoppingCart.Web.Models.Users;
@@ -14,11 +16,13 @@
         private readonly UserManager<UserEntity> _userManager;
         private readonly RoleManager<RoleEntity> _roleManager;
         private readonly SignInManager<UserEntity> _signInManager;
-        public UsersController(UserManager<UserEntity> userManager, RoleManager<RoleEntity> roleManager, SignInManager<UserEntity> signInManager)
+        private readonly IMapper _mapper;
+        public UsersController(UserManager<UserEntity> userManager, RoleManager<RoleEntity> roleManager, SignInManager<UserEntity> signInManager, IMapper mapper)
         {
             _roleManager = roleManager;
             _userManager = userManager;
             _signInManager = signInManager;
+            _mapper = mapper;
         }
         public async Task<IActionResult> Index()
         {
@@ -63,7 +67,8 @@
         [HttpPost("RegisterPost")]
         public IActionResult RegisterPost([FromForm] RegisterViewModel model)
         {
-            //var result = _userManager.CreateAsync()
+            var user = _mapper.Map<User>(model);
+
             return View();
         }
     }

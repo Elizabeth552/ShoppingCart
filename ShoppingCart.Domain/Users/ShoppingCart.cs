@@ -2,7 +2,6 @@
 {
     using System;
     using global::ShoppingCart.Domain.Common;
-    using global::ShoppingCart.Domain.Products;
 
     public class ShoppingCart : ValueObjectBase<ShoppingCart>
     {
@@ -13,7 +12,6 @@
 
         public DateTime ShoppingCartCreatedAt { get; }
 
-        public User User { get; set; }
         public decimal TotalAmount { get; }
 
     }

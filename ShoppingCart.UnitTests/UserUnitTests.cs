@@ -10,7 +10,7 @@
         public void User_CreateShoppingCart_ShoppingCartAdded()
         {
             //Arrange
-            var user = new User("Peter", "Ivanov", "Babydoll90", "peter@abv.bg", "0885578780");
+            var user = new User("Peter", "Ivanov", "peter@abv.bg", "0885578780");
 
             //Act
             user.CreateShoppingCart();
