@@ -52,9 +52,9 @@
         }
 
         [HttpPost("LoginPost")]
-        public IActionResult LoginPost([FromForm] LoginViewModel model)
+        public async Task<IActionResult> LoginPost([FromForm] LoginViewModel model)
         {
-            var result = _signInManager.PasswordSignInAsync(model.Email, model.Password, true, lockoutOnFailure: true);
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, true, lockoutOnFailure: true);
             return View();
         }
 
@@ -65,10 +65,14 @@
         }
 
         [HttpPost("RegisterPost")]
-        public IActionResult RegisterPost([FromForm] RegisterViewModel model)
+        public async Task<IActionResult> RegisterPost([FromForm] RegisterViewModel model)
         {
             var user = _mapper.Map<User>(model);
+            user.PopulateCreatedAtDate();
+            var userEntity = _mapper.Map<UserEntity>(user);
+            var result = await _userManager.CreateAsync(userEntity, model.Password);
 
+            //await _userManager.AddToRoleAsync(user, "Visitor");
             return View();
         }
     }

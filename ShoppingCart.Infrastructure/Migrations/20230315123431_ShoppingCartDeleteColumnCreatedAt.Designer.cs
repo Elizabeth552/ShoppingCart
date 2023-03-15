@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ShoppingCart.Infrastructure;
 
@@ -11,9 +12,11 @@ using ShoppingCart.Infrastructure;
 namespace ShoppingCart.Infrastructure.Migrations
 {
     [DbContext(typeof(ShoppingCartDbContext))]
-    partial class ShoppingCartDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230315123431_ShoppingCartDeleteColumnCreatedAt")]
+    partial class ShoppingCartDeleteColumnCreatedAt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,7 +214,7 @@ namespace ShoppingCart.Infrastructure.Migrations
                         {
                             Id = 1,
                             Category = "purses",
-                            CreatedAt = new DateTime(2023, 3, 15, 15, 47, 17, 975, DateTimeKind.Local).AddTicks(9782),
+                            CreatedAt = new DateTime(2023, 3, 15, 14, 34, 31, 642, DateTimeKind.Local).AddTicks(918),
                             Description = "pretty purse",
                             Name = "Purse",
                             Photo = "photo.jpeg",
@@ -222,7 +225,7 @@ namespace ShoppingCart.Infrastructure.Migrations
                         {
                             Id = 2,
                             Category = "scarfs",
-                            CreatedAt = new DateTime(2023, 3, 15, 15, 47, 17, 975, DateTimeKind.Local).AddTicks(9811),
+                            CreatedAt = new DateTime(2023, 3, 15, 14, 34, 31, 642, DateTimeKind.Local).AddTicks(950),
                             Description = "blah",
                             Name = "Scarf",
                             Photo = "scarf.jpeg",
@@ -294,20 +297,9 @@ namespace ShoppingCart.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsEnabled")
-                        .HasColumnType("bit");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -323,19 +315,7 @@ namespace ShoppingCart.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("UserEntity", (string)null);
 

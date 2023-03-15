@@ -24,20 +24,18 @@
             builder.Ignore(u => u.TwoFactorEnabled);
             builder.Ignore(u => u.EmailConfirmed);
             builder.Ignore(u => u.PhoneNumberConfirmed);
-            builder.Ignore(u => u.UserName);
-            builder.Ignore(u => u.NormalizedUserName);
-            builder.Ignore(u => u.NormalizedEmail);
+            //builder.Ignore(u => u.UserName);
+            //builder.Ignore(u => u.NormalizedUserName);
+            //builder.Ignore(u => u.NormalizedEmail);
 
             builder.OwnsOne(u => u.ShoppingCart, navBldr =>
             {
                 navBldr.Property(sc => sc.TotalAmount).HasColumnName(nameof(ShoppingCartEntity.TotalAmount));
-                navBldr.Property(m => m.ShoppingCartCreatedAt).HasColumnName(nameof(ShoppingCartEntity.ShoppingCartCreatedAt));
 
                 navBldr.HasData(new
                 {
                     UserId = 1,
-                    TotalAmount = 0m,
-                    ShoppingCartCreatedAt = DateTime.Now
+                    TotalAmount = 0m
                 });
             });
 
@@ -54,7 +52,7 @@
                 FirstName = "Pesho",
                 LastName = "Peshov",
                 Email = "pesho@pesho.be",
-                CreatedAt = DateTime.Now,
+                CreatedAt = "11.12.2022",
                 PhoneNumber = "12345678",
                 Password = "ne kazvai na nikoi",
                 City = "burgas",

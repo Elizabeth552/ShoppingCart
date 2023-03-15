@@ -31,8 +31,9 @@ builder.Services.AddIdentity<UserEntity, RoleEntity>(
         options =>
         {
             options.SignIn.RequireConfirmedAccount = false;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequiredUniqueChars = 0;
 
-            //Other options go here
         }
         )
     .AddEntityFrameworkStores<ShoppingCartDbContext>();

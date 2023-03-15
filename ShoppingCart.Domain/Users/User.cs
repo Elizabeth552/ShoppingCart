@@ -1,31 +1,38 @@
 ﻿namespace ShoppingCart.Domain.Users
 {
-    using System;
+    using System.Globalization;
     using global::ShoppingCart.Domain.Common;
-    using global::ShoppingCart.Domain.Products;
 
     public class User : EntityBase
     {
-        public User(string email, string firstName, string lastName, string phone)
+        public User()
+        {
+
+        }
+        public User(string email, string firstName, string lastName, string phoneNumber)
         {
             Email = email;
             FirstName = firstName;
             LastName = lastName;
-            Phone = phone;
+            PhoneNumber = phoneNumber;
         }
 
         public string Email { get; }
         public string FirstName { get; }
         public string LastName { get; }
-        public string Phone { get; }
-        public DateTime CreatedAt { get; }
+        public string PhoneNumber { get; }
+        public string CreatedAt { get; private set; }
         public UserAddress UserAddress { get; set; }
         public ShoppingCart? ShoppingCart { get; private set; }
-        public List<Product> Products { get; } = new List<Product>();
 
         public void CreateShoppingCart()
         {
             ShoppingCart = new ShoppingCart();
+        }
+
+        public void PopulateCreatedAtDate()
+        {
+            CreatedAt = DateTime.Now.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
         }
     }
 }

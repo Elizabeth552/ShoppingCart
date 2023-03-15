@@ -23,7 +23,7 @@
 
         [Required]
         [Phone]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Required]
         [StringLength(50, ErrorMessage = "Street length can't be more than 50.")]

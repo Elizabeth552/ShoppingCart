@@ -1,18 +1,18 @@
 ﻿namespace ShoppingCart.Domain.Users
 {
-    using System;
     using global::ShoppingCart.Domain.Common;
+    using global::ShoppingCart.Domain.Products;
 
     public class ShoppingCart : ValueObjectBase<ShoppingCart>
     {
         public ShoppingCart()
         {
-            ShoppingCartCreatedAt = DateTime.Now;
+
         }
 
-        public DateTime ShoppingCartCreatedAt { get; }
-
         public decimal TotalAmount { get; }
+
+        public List<Product> Products { get; } = new List<Product>();
 
     }
 }
